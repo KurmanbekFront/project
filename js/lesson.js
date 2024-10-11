@@ -15,3 +15,63 @@ phoneButton.onclick = () => {
         phoneResult.style.color = "red"
     }
 }
+
+
+// TAB SLIDER
+
+const tabContentBlocks = document.querySelectorAll(".tab_content_block")
+const tabItems = document.querySelectorAll(".tab_content_item")
+const tabParent = document.querySelector(".tab_content_items")
+
+const hideTabContent = () => {
+    tabContentBlocks.forEach((item) => {
+        item.style.display = "none"
+    })
+    tabItems.forEach((item) => {
+        item.classList.remove("tab_content_item_active")
+    })
+}
+
+const showTabContent = (index = 0) => {
+    tabContentBlocks[index].style.display = "block"
+    tabItems[index].classList.add("tab_content_item_active")
+}
+
+let currentIndex = 0;
+let intervalId;
+
+const switchTab = () => {
+    hideTabContent()
+    currentIndex = (currentIndex + 1) % tabContentBlocks.length
+    showTabContent(currentIndex)
+}
+
+const startSwitch = () => {
+    intervalId = setInterval(() => {
+        switchTab()
+    }, 3000)
+}
+
+const stopSwitch = () => {
+    clearInterval(intervalId)
+}
+
+hideTabContent()
+showTabContent(currentIndex)
+startSwitch()
+
+
+tabParent.onclick = (event) => {
+    if (event.target.classList.contains("tab_content_item")) {
+        tabItems.forEach((item, index) => {
+            if (event.target === item) {
+                stopSwitch()
+                hideTabContent()
+                showTabContent(index)
+                currentIndex = index
+                startSwitch()
+            }
+        })
+    }
+}
+
