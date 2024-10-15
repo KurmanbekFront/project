@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Optimus Prime",
+        "age": "1000+",
+        "person_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaxugX5LqVv2BLIQjBBCY864nqOX8p6jLyceavJurkVEBUQ60Vj5x5lpFOLBDQgbcQHxXnXePu-hNJ2UNYNn1WtBMArVxlX-_q9c-x8g"
+    },
+    {
+        "name": "Megatron",
+        "age": "1000+",
+        "person_photo": "https://upload.wikimedia.org/wikipedia/en/6/6f/Megatron_%28Decepticon%29.jpg"
+    },
+    {
+        "name": "Bumblebee",
+        "age": "1000+",
+        "person_photo": "https://cdn.europosters.eu/image/750/posters/transformers-bumblebee-city-i3040.jpg"
+    }
+]

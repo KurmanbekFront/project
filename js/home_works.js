@@ -86,3 +86,45 @@ stopBtn.onclick = stopTimer;
 resetBtn.onclick = resetTimer;
 
 timer();
+
+// CHARACTER CARD
+
+const characterList = document.querySelector(".characters-list")
+
+
+const request = () => {
+  const userPhoto = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
+  const request = new XMLHttpRequest()
+  request.open("GET", "/data/persons.json")
+  request.setRequestHeader("Content-type", "application/json")
+  request.send()
+  request.onload = () => {
+    const data = JSON.parse(request.response)
+    data.forEach((item) => {
+      const personCard = document.createElement("div")
+      personCard.setAttribute("class", "character-card")
+      personCard.innerHTML = `
+      <div class="character-photo">
+        <img src="${item.person_photo || userPhoto}" alt="${item.name}">
+      </div>
+      <h2>${item.name}</h2>
+      <h3>age: ${item.age}</h3>
+      `
+      characterList.appendChild(personCard)
+    });  
+  }
+}
+request()
+
+// ANY JSON
+
+const anyRequest = new XMLHttpRequest()
+anyRequest.open("GET", "/data/any.json")
+anyRequest.setRequestHeader("Content-type", "application/json")
+anyRequest.send()
+anyRequest.onload = () => {
+    const data = JSON.parse(anyRequest.response)
+    data.forEach((item) => {
+      console.log(item);
+    });  
+  }
