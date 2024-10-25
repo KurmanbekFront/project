@@ -91,9 +91,8 @@ timer();
 
 const characterList = document.querySelector(".characters-list")
 
-
+const userPhoto = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
 const request = () => {
-  const userPhoto = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
   const request = new XMLHttpRequest()
   request.open("GET", "/data/persons.json")
   request.setRequestHeader("Content-type", "application/json")
@@ -116,6 +115,24 @@ const request = () => {
 }
 request()
 
+// const asyncRequest = async () => {
+//   const response = await fetch(`/data/persons.json`)
+//   const data = await response.json()
+//   data.forEach((item) => {
+//     const personCard = document.createElement("div")
+//       personCard.setAttribute("class", "character-card")
+//       personCard.innerHTML = `
+//       <div class="character-photo">
+//         <img src="${item.person_photo || userPhoto}" alt="${item.name}">
+//       </div>
+//       <h2>${item.name}</h2>
+//       <h3>age: ${item.age}</h3>
+//       `
+//       characterList.appendChild(personCard)
+//   })
+// }
+// asyncRequest()
+
 // ANY JSON
 
 const anyRequest = new XMLHttpRequest()
@@ -128,3 +145,14 @@ anyRequest.onload = () => {
       console.log(item);
     });  
   }
+
+  // const anyRequest = async () => {
+  //   try {
+  //     const response = await fetch(`/data/any.json`);
+  //     const data = await response.json();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // anyRequest()

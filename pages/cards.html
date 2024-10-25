@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Monster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/core.css">
-    <link rel="stylesheet" href="../css/monster.css">
+    <link rel="stylesheet" href="../css/cards.css">
 </head>
 <body>
+    
 <div class="wrapper">
     <div class="header">
         <div class="container">
             <div class="inner_header">
-                <a href="../index.html">
+                <a href="index.html">
                     <div class="logotype">
-                        <h2>Java<span>Script</span></h2>
+                        <h2>JavaScript</h2>
                     </div>
                 </a>
                 <ul class="menu">
@@ -25,7 +27,7 @@
                         <a href="../pages/lessons.html">Lessons</a>
                     </li>
                     <li class="menu_link">
-                        <a href="https://t.me/NurDinBuy16" target="_blank">Send message</a>
+                        <a href="http://t.me/nurdinbuy16" target="_blank">Send message</a>
                     </li>
                     <li class="menu_link">
                         <a href="../pages/cards.html">Cards</a>
@@ -35,8 +37,24 @@
             </div>
         </div>
     </div>
+    <div class="cards_block">
+        <div class="container">
+            <h2>Cards</h2>
+            <div class="cards_list">
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <a href="https://www.instagram.com/nurdinbuy/" target="_blank">
+                <div class="inner_footer">
+                    <h2>Made by NurDinBuy</h2>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
-<canvas id="canvas"></canvas>
 
 <div class="modal">
     <div class="modal_dialog">
@@ -44,15 +62,26 @@
             <form action="#">
                 <div class="modal_close">&times;</div>
                 <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
-                <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
-                <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
+                <input
+                    required
+                    placeholder="Ваше имя"
+                    name="name"
+                    type="text"
+                    class="modal_input"
+                >
+                <input
+                    required
+                    placeholder="Ваш номер телефона"
+                    name="phone"
+                    type="text"
+                    class="modal_input"
+                >
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>
             </form>
         </div>
     </div>
 </div>
-
 </body>
-<script src="../js/monster.js"></script>
+<script src="../js/cards.js"></script>
 <script src="../js/modal.js"></script>
 </html>

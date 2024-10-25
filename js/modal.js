@@ -38,3 +38,30 @@ window.addEventListener("scroll", scrollEnd)
 setTimeout(() => {
     openModal()
 }, 10000)
+
+
+// POST DATA
+
+const form = document.querySelector("form")
+
+const chat_id = `@kurman_lesson7`
+const token = `7819414054:AAG2yp4KNvHWvb2x4GiZgb2IfNz4tLbHDKc`
+const api_url = `https://api.telegram.org/bot${token}/sendMessage`
+
+form.onsubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData(form)
+    const user = {}
+    formData.forEach((item, index) => {
+        user[index] = item
+    })
+    const {name, phone} = user
+    const text = `name: ${name}\nphone: ${phone}`
+
+    
+    fetch(api_url, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({chat_id: chat_id, text})
+    })
+}
